@@ -1,0 +1,531 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		C33F21FF23FC7AD7007B5432 /* MobileNetV2.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = C33F21FE23FC7AD7007B5432 /* MobileNetV2.mlmodel */; };
+		C33F220123FC7BA2007B5432 /* YOLOv3Tiny.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = C33F220023FC7BA2007B5432 /* YOLOv3Tiny.mlmodel */; };
+		C340342823FBE71500DD818A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C340342723FBE71500DD818A /* AppDelegate.swift */; };
+		C340342A23FBE71500DD818A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C340342923FBE71500DD818A /* SceneDelegate.swift */; };
+		C340342C23FBE71500DD818A /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C340342B23FBE71500DD818A /* MainViewController.swift */; };
+		C340342F23FBE71500DD818A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C340342D23FBE71500DD818A /* Main.storyboard */; };
+		C340343123FBE71C00DD818A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C340343023FBE71C00DD818A /* Assets.xcassets */; };
+		C340343423FBE71C00DD818A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C340343223FBE71C00DD818A /* LaunchScreen.storyboard */; };
+		C340343E23FBE92C00DD818A /* FPSCounter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C340343D23FBE92C00DD818A /* FPSCounter.swift */; };
+		C340344E23FBFC9D00DD818A /* StoryboardLoadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C340344D23FBFC9D00DD818A /* StoryboardLoadable.swift */; };
+		C347F2D023FD1CE3005B2C12 /* TFModelDataHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = C347F2CF23FD1CE3005B2C12 /* TFModelDataHandler.swift */; };
+		C347F2D323FD1D24005B2C12 /* MobileNetSSD.swift in Sources */ = {isa = PBXBuildFile; fileRef = C347F2D223FD1D24005B2C12 /* MobileNetSSD.swift */; };
+		C347F2DB23FD3E0F005B2C12 /* CameraFeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C347F2DA23FD3E0F005B2C12 /* CameraFeedViewController.swift */; };
+		C347F2E023FD3F57005B2C12 /* CoreMLModelDataHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = C347F2DF23FD3F57005B2C12 /* CoreMLModelDataHandler.swift */; };
+		C347F2E923FD5724005B2C12 /* ModelDataHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = C347F2E823FD5724005B2C12 /* ModelDataHandler.swift */; };
+		C34CD32323FD186C00297600 /* String+Size.swift in Sources */ = {isa = PBXBuildFile; fileRef = C34CD32223FD186C00297600 /* String+Size.swift */; };
+		C34CD32523FD189400297600 /* UIColor+Percentage.swift in Sources */ = {isa = PBXBuildFile; fileRef = C34CD32423FD189400297600 /* UIColor+Percentage.swift */; };
+		C34CD32723FD18C700297600 /* CVPixelBuffer+Resize.swift in Sources */ = {isa = PBXBuildFile; fileRef = C34CD32623FD18C700297600 /* CVPixelBuffer+Resize.swift */; };
+		C34CD32A23FD191400297600 /* detect.tflite in Resources */ = {isa = PBXBuildFile; fileRef = C34CD32823FD191400297600 /* detect.tflite */; };
+		C34CD32B23FD191400297600 /* labelmap.txt in Resources */ = {isa = PBXBuildFile; fileRef = C34CD32923FD191400297600 /* labelmap.txt */; };
+		C34CD32E23FD19B300297600 /* PreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C34CD32D23FD19B300297600 /* PreviewView.swift */; };
+		C34CD33223FD19FC00297600 /* OverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C34CD33123FD19FC00297600 /* OverlayView.swift */; };
+		C34CD33423FD1A8C00297600 /* CameraFeedManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C34CD33323FD1A8C00297600 /* CameraFeedManager.swift */; };
+		F0494341B13EC4DBC2928ED6 /* Pods_Tensorflow_coreml_obj_detection.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD776E5E6F30C6AEDE549141 /* Pods_Tensorflow_coreml_obj_detection.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		AD776E5E6F30C6AEDE549141 /* Pods_Tensorflow_coreml_obj_detection.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Tensorflow_coreml_obj_detection.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C33F21FE23FC7AD7007B5432 /* MobileNetV2.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = MobileNetV2.mlmodel; sourceTree = "<group>"; };
+		C33F220023FC7BA2007B5432 /* YOLOv3Tiny.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = YOLOv3Tiny.mlmodel; sourceTree = "<group>"; };
+		C340342423FBE71500DD818A /* Tensorflow_coreml_obj_detection.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tensorflow_coreml_obj_detection.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C340342723FBE71500DD818A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		C340342923FBE71500DD818A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		C340342B23FBE71500DD818A /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		C340342E23FBE71500DD818A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		C340343023FBE71C00DD818A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		C340343323FBE71C00DD818A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		C340343523FBE71C00DD818A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C340343D23FBE92C00DD818A /* FPSCounter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FPSCounter.swift; sourceTree = "<group>"; };
+		C340344D23FBFC9D00DD818A /* StoryboardLoadable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryboardLoadable.swift; sourceTree = "<group>"; };
+		C347F2CF23FD1CE3005B2C12 /* TFModelDataHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TFModelDataHandler.swift; sourceTree = "<group>"; };
+		C347F2D223FD1D24005B2C12 /* MobileNetSSD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MobileNetSSD.swift; sourceTree = "<group>"; };
+		C347F2DA23FD3E0F005B2C12 /* CameraFeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraFeedViewController.swift; sourceTree = "<group>"; };
+		C347F2DF23FD3F57005B2C12 /* CoreMLModelDataHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreMLModelDataHandler.swift; sourceTree = "<group>"; };
+		C347F2E823FD5724005B2C12 /* ModelDataHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelDataHandler.swift; sourceTree = "<group>"; };
+		C34CD32223FD186C00297600 /* String+Size.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Size.swift"; sourceTree = "<group>"; };
+		C34CD32423FD189400297600 /* UIColor+Percentage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Percentage.swift"; sourceTree = "<group>"; };
+		C34CD32623FD18C700297600 /* CVPixelBuffer+Resize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CVPixelBuffer+Resize.swift"; sourceTree = "<group>"; };
+		C34CD32823FD191400297600 /* detect.tflite */ = {isa = PBXFileReference; lastKnownFileType = file; path = detect.tflite; sourceTree = "<group>"; };
+		C34CD32923FD191400297600 /* labelmap.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = labelmap.txt; sourceTree = "<group>"; };
+		C34CD32D23FD19B300297600 /* PreviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewView.swift; sourceTree = "<group>"; };
+		C34CD33123FD19FC00297600 /* OverlayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverlayView.swift; sourceTree = "<group>"; };
+		C34CD33323FD1A8C00297600 /* CameraFeedManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraFeedManager.swift; sourceTree = "<group>"; };
+		CF8612D69B115B2E33198FAE /* Pods-Tensorflow_coreml_obj_detection.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tensorflow_coreml_obj_detection.release.xcconfig"; path = "Target Support Files/Pods-Tensorflow_coreml_obj_detection/Pods-Tensorflow_coreml_obj_detection.release.xcconfig"; sourceTree = "<group>"; };
+		D066F94AA9F33A3BA0B691CD /* Pods-Tensorflow_coreml_obj_detection.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tensorflow_coreml_obj_detection.debug.xcconfig"; path = "Target Support Files/Pods-Tensorflow_coreml_obj_detection/Pods-Tensorflow_coreml_obj_detection.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		C340342123FBE71500DD818A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F0494341B13EC4DBC2928ED6 /* Pods_Tensorflow_coreml_obj_detection.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		03AC61C01DA95666CB734EE4 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				D066F94AA9F33A3BA0B691CD /* Pods-Tensorflow_coreml_obj_detection.debug.xcconfig */,
+				CF8612D69B115B2E33198FAE /* Pods-Tensorflow_coreml_obj_detection.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		C340341B23FBE71500DD818A = {
+			isa = PBXGroup;
+			children = (
+				C340342623FBE71500DD818A /* Tensorflow_coreml_obj_detection */,
+				C340342523FBE71500DD818A /* Products */,
+				03AC61C01DA95666CB734EE4 /* Pods */,
+				DB3D39CAB00DA593797A57BF /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		C340342523FBE71500DD818A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C340342423FBE71500DD818A /* Tensorflow_coreml_obj_detection.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		C340342623FBE71500DD818A /* Tensorflow_coreml_obj_detection */ = {
+			isa = PBXGroup;
+			children = (
+				C340344123FBF8F700DD818A /* Main */,
+				C347F2E423FD56B1005B2C12 /* Models */,
+				C347F2E723FD56EA005B2C12 /* ModelDataHandler */,
+				C347F2D923FD3DFD005B2C12 /* CameraFeed */,
+				C340344C23FBFC8A00DD818A /* Extensions */,
+				C340342723FBE71500DD818A /* AppDelegate.swift */,
+				C340342923FBE71500DD818A /* SceneDelegate.swift */,
+				C340342D23FBE71500DD818A /* Main.storyboard */,
+				C340343023FBE71C00DD818A /* Assets.xcassets */,
+				C340343223FBE71C00DD818A /* LaunchScreen.storyboard */,
+				C340343523FBE71C00DD818A /* Info.plist */,
+				C340343D23FBE92C00DD818A /* FPSCounter.swift */,
+			);
+			path = Tensorflow_coreml_obj_detection;
+			sourceTree = "<group>";
+		};
+		C340344123FBF8F700DD818A /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				C340342B23FBE71500DD818A /* MainViewController.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		C340344C23FBFC8A00DD818A /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				C340344D23FBFC9D00DD818A /* StoryboardLoadable.swift */,
+				C34CD32223FD186C00297600 /* String+Size.swift */,
+				C34CD32423FD189400297600 /* UIColor+Percentage.swift */,
+				C34CD32623FD18C700297600 /* CVPixelBuffer+Resize.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		C347F2D923FD3DFD005B2C12 /* CameraFeed */ = {
+			isa = PBXGroup;
+			children = (
+				C34CD32C23FD199B00297600 /* Views */,
+				C34CD33323FD1A8C00297600 /* CameraFeedManager.swift */,
+				C347F2DA23FD3E0F005B2C12 /* CameraFeedViewController.swift */,
+			);
+			path = CameraFeed;
+			sourceTree = "<group>";
+		};
+		C347F2E423FD56B1005B2C12 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				C347F2E623FD56CE005B2C12 /* TensorFlow */,
+				C347F2E523FD56BB005B2C12 /* CoreML */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		C347F2E523FD56BB005B2C12 /* CoreML */ = {
+			isa = PBXGroup;
+			children = (
+				C33F220023FC7BA2007B5432 /* YOLOv3Tiny.mlmodel */,
+				C33F21FE23FC7AD7007B5432 /* MobileNetV2.mlmodel */,
+			);
+			path = CoreML;
+			sourceTree = "<group>";
+		};
+		C347F2E623FD56CE005B2C12 /* TensorFlow */ = {
+			isa = PBXGroup;
+			children = (
+				C347F2D223FD1D24005B2C12 /* MobileNetSSD.swift */,
+				C34CD32823FD191400297600 /* detect.tflite */,
+				C34CD32923FD191400297600 /* labelmap.txt */,
+			);
+			path = TensorFlow;
+			sourceTree = "<group>";
+		};
+		C347F2E723FD56EA005B2C12 /* ModelDataHandler */ = {
+			isa = PBXGroup;
+			children = (
+				C347F2DF23FD3F57005B2C12 /* CoreMLModelDataHandler.swift */,
+				C347F2CF23FD1CE3005B2C12 /* TFModelDataHandler.swift */,
+				C347F2E823FD5724005B2C12 /* ModelDataHandler.swift */,
+			);
+			path = ModelDataHandler;
+			sourceTree = "<group>";
+		};
+		C34CD32C23FD199B00297600 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				C34CD32D23FD19B300297600 /* PreviewView.swift */,
+				C34CD33123FD19FC00297600 /* OverlayView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		DB3D39CAB00DA593797A57BF /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				AD776E5E6F30C6AEDE549141 /* Pods_Tensorflow_coreml_obj_detection.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		C340342323FBE71500DD818A /* Tensorflow_coreml_obj_detection */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C340343823FBE71C00DD818A /* Build configuration list for PBXNativeTarget "Tensorflow_coreml_obj_detection" */;
+			buildPhases = (
+				12A616DF35B28FFEB0BBFF00 /* [CP] Check Pods Manifest.lock */,
+				C340342023FBE71500DD818A /* Sources */,
+				C340342123FBE71500DD818A /* Frameworks */,
+				C340342223FBE71500DD818A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Tensorflow_coreml_obj_detection;
+			productName = Tensorflow_coreml_obj_detection;
+			productReference = C340342423FBE71500DD818A /* Tensorflow_coreml_obj_detection.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		C340341C23FBE71500DD818A /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1120;
+				LastUpgradeCheck = 1120;
+				ORGANIZATIONNAME = "Vasile Morari";
+				TargetAttributes = {
+					C340342323FBE71500DD818A = {
+						CreatedOnToolsVersion = 11.2;
+					};
+				};
+			};
+			buildConfigurationList = C340341F23FBE71500DD818A /* Build configuration list for PBXProject "Tensorflow_coreml_obj_detection" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = C340341B23FBE71500DD818A;
+			productRefGroup = C340342523FBE71500DD818A /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				C340342323FBE71500DD818A /* Tensorflow_coreml_obj_detection */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		C340342223FBE71500DD818A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C34CD32B23FD191400297600 /* labelmap.txt in Resources */,
+				C340343423FBE71C00DD818A /* LaunchScreen.storyboard in Resources */,
+				C340343123FBE71C00DD818A /* Assets.xcassets in Resources */,
+				C340342F23FBE71500DD818A /* Main.storyboard in Resources */,
+				C34CD32A23FD191400297600 /* detect.tflite in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		12A616DF35B28FFEB0BBFF00 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Tensorflow_coreml_obj_detection-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		C340342023FBE71500DD818A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C34CD32E23FD19B300297600 /* PreviewView.swift in Sources */,
+				C347F2D323FD1D24005B2C12 /* MobileNetSSD.swift in Sources */,
+				C340344E23FBFC9D00DD818A /* StoryboardLoadable.swift in Sources */,
+				C34CD32523FD189400297600 /* UIColor+Percentage.swift in Sources */,
+				C347F2E023FD3F57005B2C12 /* CoreMLModelDataHandler.swift in Sources */,
+				C33F220123FC7BA2007B5432 /* YOLOv3Tiny.mlmodel in Sources */,
+				C340343E23FBE92C00DD818A /* FPSCounter.swift in Sources */,
+				C340342C23FBE71500DD818A /* MainViewController.swift in Sources */,
+				C347F2E923FD5724005B2C12 /* ModelDataHandler.swift in Sources */,
+				C347F2D023FD1CE3005B2C12 /* TFModelDataHandler.swift in Sources */,
+				C340342823FBE71500DD818A /* AppDelegate.swift in Sources */,
+				C34CD33223FD19FC00297600 /* OverlayView.swift in Sources */,
+				C34CD33423FD1A8C00297600 /* CameraFeedManager.swift in Sources */,
+				C34CD32323FD186C00297600 /* String+Size.swift in Sources */,
+				C347F2DB23FD3E0F005B2C12 /* CameraFeedViewController.swift in Sources */,
+				C33F21FF23FC7AD7007B5432 /* MobileNetV2.mlmodel in Sources */,
+				C340342A23FBE71500DD818A /* SceneDelegate.swift in Sources */,
+				C34CD32723FD18C700297600 /* CVPixelBuffer+Resize.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		C340342D23FBE71500DD818A /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C340342E23FBE71500DD818A /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		C340343223FBE71C00DD818A /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C340343323FBE71C00DD818A /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		C340343623FBE71C00DD818A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		C340343723FBE71C00DD818A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		C340343923FBE71C00DD818A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D066F94AA9F33A3BA0B691CD /* Pods-Tensorflow_coreml_obj_detection.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = ZTW9545CJH;
+				INFOPLIST_FILE = Tensorflow_coreml_obj_detection/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = self.vasilemorari.tensor;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		C340343A23FBE71C00DD818A /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = CF8612D69B115B2E33198FAE /* Pods-Tensorflow_coreml_obj_detection.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = ZTW9545CJH;
+				INFOPLIST_FILE = Tensorflow_coreml_obj_detection/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = self.vasilemorari.tensor;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		C340341F23FBE71500DD818A /* Build configuration list for PBXProject "Tensorflow_coreml_obj_detection" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C340343623FBE71C00DD818A /* Debug */,
+				C340343723FBE71C00DD818A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C340343823FBE71C00DD818A /* Build configuration list for PBXNativeTarget "Tensorflow_coreml_obj_detection" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C340343923FBE71C00DD818A /* Debug */,
+				C340343A23FBE71C00DD818A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = C340341C23FBE71500DD818A /* Project object */;
+}

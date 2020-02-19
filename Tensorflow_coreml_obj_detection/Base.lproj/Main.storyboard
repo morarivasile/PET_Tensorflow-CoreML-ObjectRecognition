@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="0s8-Ku-p3N">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15509"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Main View Controller-->
+        <scene sceneID="VDV-B2-9cs">
+            <objects>
+                <viewController id="uoP-Jv-HLa" customClass="MainViewController" customModule="Tensorflow_coreml_obj_detection" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="pTX-Yk-tUc">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="o8f-wK-vb0" customClass="PreviewView" customModule="Tensorflow_coreml_obj_detection" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uex-pe-1OB" customClass="OverlayView" customModule="Tensorflow_coreml_obj_detection" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <color key="backgroundColor" white="1" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                            <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tOk-HZ-okN">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="QaA-Vi-bb0">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="NaT-l2-pd0">
+                                            <rect key="frame" x="133.5" y="394" width="147.5" height="108"/>
+                                            <subviews>
+                                                <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="6Nj-SK-4z8">
+                                                    <rect key="frame" x="0.0" y="0.0" width="147.5" height="50"/>
+                                                    <subviews>
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="coreml_logo" translatesAutoresizingMaskIntoConstraints="NO" id="3Ch-vl-sBn">
+                                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="50" id="0gR-jo-JVL"/>
+                                                                <constraint firstAttribute="width" constant="50" id="qrL-AX-6is"/>
+                                                            </constraints>
+                                                        </imageView>
+                                                        <label opaque="NO" userInteractionEnabled="NO" alpha="0.60000002384185791" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CoreML" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GLv-Ls-xjc">
+                                                            <rect key="frame" x="58" y="0.0" width="89.5" height="50"/>
+                                                            <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="17"/>
+                                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                </stackView>
+                                                <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="dmy-Zf-Jad">
+                                                    <rect key="frame" x="0.0" y="58" width="147.5" height="50"/>
+                                                    <subviews>
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tensorflow_logo" translatesAutoresizingMaskIntoConstraints="NO" id="E25-bm-GNb">
+                                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" constant="50" id="eWJ-Ls-p59"/>
+                                                                <constraint firstAttribute="height" constant="50" id="gTT-CR-XTR"/>
+                                                            </constraints>
+                                                        </imageView>
+                                                        <label opaque="NO" userInteractionEnabled="NO" alpha="0.60000002384185791" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TensorFlow" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SGL-Mn-0Pr">
+                                                            <rect key="frame" x="58" y="0.0" width="89.5" height="50"/>
+                                                            <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="17"/>
+                                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                </stackView>
+                                            </subviews>
+                                        </stackView>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kce-te-sFv">
+                                            <rect key="frame" x="133.5" y="394" width="147.5" height="50"/>
+                                            <connections>
+                                                <action selector="coreMLButtonTapped:" destination="uoP-Jv-HLa" eventType="touchUpInside" id="2t7-ak-Wu3"/>
+                                            </connections>
+                                        </button>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GsB-63-qD7">
+                                            <rect key="frame" x="133.5" y="452" width="147.5" height="50"/>
+                                            <connections>
+                                                <action selector="tensorFlowButtonTapped:" destination="uoP-Jv-HLa" eventType="touchUpInside" id="Tb0-Of-p0A"/>
+                                            </connections>
+                                        </button>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="NaT-l2-pd0" firstAttribute="centerX" secondItem="QaA-Vi-bb0" secondAttribute="centerX" id="0K3-7C-1Hg"/>
+                                        <constraint firstItem="Kce-te-sFv" firstAttribute="height" secondItem="6Nj-SK-4z8" secondAttribute="height" id="3gC-LO-Nu5"/>
+                                        <constraint firstItem="Kce-te-sFv" firstAttribute="centerX" secondItem="6Nj-SK-4z8" secondAttribute="centerX" id="BvK-gc-SbY"/>
+                                        <constraint firstItem="Kce-te-sFv" firstAttribute="width" secondItem="6Nj-SK-4z8" secondAttribute="width" id="I6y-K0-v5k"/>
+                                        <constraint firstItem="GsB-63-qD7" firstAttribute="centerY" secondItem="dmy-Zf-Jad" secondAttribute="centerY" id="IhF-7q-f9J"/>
+                                        <constraint firstItem="GsB-63-qD7" firstAttribute="centerX" secondItem="dmy-Zf-Jad" secondAttribute="centerX" id="O73-K0-yLe"/>
+                                        <constraint firstItem="NaT-l2-pd0" firstAttribute="centerY" secondItem="QaA-Vi-bb0" secondAttribute="centerY" id="OmX-Fp-99g"/>
+                                        <constraint firstItem="GsB-63-qD7" firstAttribute="height" secondItem="dmy-Zf-Jad" secondAttribute="height" id="VGQ-Mm-1ex"/>
+                                        <constraint firstItem="GsB-63-qD7" firstAttribute="width" secondItem="dmy-Zf-Jad" secondAttribute="width" id="X1V-NO-GlG"/>
+                                        <constraint firstItem="Kce-te-sFv" firstAttribute="centerY" secondItem="6Nj-SK-4z8" secondAttribute="centerY" id="Xno-zF-l65"/>
+                                    </constraints>
+                                </view>
+                                <blurEffect style="regular"/>
+                            </visualEffectView>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kzj-9N-E1N">
+                                <rect key="frame" x="150.5" y="778" width="113" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="c3c-tI-LlD"/>
+                                </constraints>
+                                <state key="normal" title="Resume Session"/>
+                                <connections>
+                                    <action selector="onClickResumeButton:" destination="uoP-Jv-HLa" eventType="touchUpInside" id="q2t-R4-mKZ"/>
+                                </connections>
+                            </button>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Camera Unavailable" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xLh-Ki-7dN">
+                                <rect key="frame" x="111.5" y="748" width="191" height="25"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="25" id="lj1-Sf-xky"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nrR-PV-shY">
+                                <rect key="frame" x="354" y="104" width="44" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="7ku-9g-E8V"/>
+                                    <constraint firstAttribute="width" constant="44" id="BDw-pc-q2F"/>
+                                </constraints>
+                                <color key="tintColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" image="clear.fill" catalog="system"/>
+                                <connections>
+                                    <action selector="closeButtonTapped:" destination="uoP-Jv-HLa" eventType="touchUpInside" id="Yu5-tW-HSg"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="Kzj-9N-E1N" firstAttribute="top" secondItem="xLh-Ki-7dN" secondAttribute="bottom" constant="5" id="1ec-VV-jxq"/>
+                            <constraint firstAttribute="bottom" secondItem="o8f-wK-vb0" secondAttribute="bottom" id="8cs-qX-LpZ"/>
+                            <constraint firstItem="Db5-Bp-jGr" firstAttribute="bottom" secondItem="Kzj-9N-E1N" secondAttribute="bottom" constant="44" id="AvV-G2-3UA"/>
+                            <constraint firstAttribute="trailing" secondItem="tOk-HZ-okN" secondAttribute="trailing" id="CR8-VS-cua"/>
+                            <constraint firstItem="tOk-HZ-okN" firstAttribute="top" secondItem="pTX-Yk-tUc" secondAttribute="top" id="CyQ-L1-0bY"/>
+                            <constraint firstItem="Kzj-9N-E1N" firstAttribute="centerX" secondItem="xLh-Ki-7dN" secondAttribute="centerX" id="HtY-XK-BhW"/>
+                            <constraint firstItem="tOk-HZ-okN" firstAttribute="leading" secondItem="Db5-Bp-jGr" secondAttribute="leading" id="She-7T-OfY"/>
+                            <constraint firstItem="uex-pe-1OB" firstAttribute="trailing" secondItem="o8f-wK-vb0" secondAttribute="trailing" id="bfc-Zy-8pJ"/>
+                            <constraint firstItem="xLh-Ki-7dN" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Db5-Bp-jGr" secondAttribute="leading" constant="20" id="dua-GF-GOU"/>
+                            <constraint firstItem="uex-pe-1OB" firstAttribute="top" secondItem="o8f-wK-vb0" secondAttribute="top" id="f4r-CJ-9JZ"/>
+                            <constraint firstItem="nrR-PV-shY" firstAttribute="top" secondItem="Db5-Bp-jGr" secondAttribute="top" constant="16" id="gJW-Xq-7eR"/>
+                            <constraint firstItem="uex-pe-1OB" firstAttribute="leading" secondItem="o8f-wK-vb0" secondAttribute="leading" id="iik-MG-bfX"/>
+                            <constraint firstItem="uex-pe-1OB" firstAttribute="bottom" secondItem="o8f-wK-vb0" secondAttribute="bottom" id="lvT-bp-swi"/>
+                            <constraint firstItem="o8f-wK-vb0" firstAttribute="leading" secondItem="Db5-Bp-jGr" secondAttribute="leading" id="mUb-IM-nYD"/>
+                            <constraint firstItem="xLh-Ki-7dN" firstAttribute="centerX" secondItem="pTX-Yk-tUc" secondAttribute="centerX" id="oDl-lP-ujr"/>
+                            <constraint firstItem="o8f-wK-vb0" firstAttribute="top" secondItem="pTX-Yk-tUc" secondAttribute="top" id="sg2-Ca-tBY"/>
+                            <constraint firstItem="Db5-Bp-jGr" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="xLh-Ki-7dN" secondAttribute="trailing" constant="20" id="th0-Si-n3I"/>
+                            <constraint firstAttribute="trailing" secondItem="nrR-PV-shY" secondAttribute="trailing" constant="16" id="thh-6V-Hds"/>
+                            <constraint firstAttribute="bottom" secondItem="tOk-HZ-okN" secondAttribute="bottom" id="yOX-oG-xok"/>
+                            <constraint firstItem="Db5-Bp-jGr" firstAttribute="trailing" secondItem="o8f-wK-vb0" secondAttribute="trailing" id="zwU-ca-HaF"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Db5-Bp-jGr"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="9K4-ld-aPe"/>
+                    <connections>
+                        <outlet property="cameraUnavailableLabel" destination="xLh-Ki-7dN" id="TBN-to-mf5"/>
+                        <outlet property="closeButton" destination="nrR-PV-shY" id="DKa-Ut-aCc"/>
+                        <outlet property="overlayView" destination="uex-pe-1OB" id="2A1-yM-ncB"/>
+                        <outlet property="previewView" destination="o8f-wK-vb0" id="5iF-1G-WIo"/>
+                        <outlet property="resumeButton" destination="Kzj-9N-E1N" id="tRO-ea-XZa"/>
+                        <outlet property="visualEffectView" destination="tOk-HZ-okN" id="fFl-3g-9gn"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="svK-HI-4PT" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2763.768115942029" y="138.61607142857142"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="msX-Qa-3g7">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="0s8-Ku-p3N" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="3pA-Ib-LXe">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="uoP-Jv-HLa" kind="relationship" relationship="rootViewController" id="Lpp-K3-5zd"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cyT-V9-6bt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1853.6231884057972" y="138.61607142857142"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="clear.fill" catalog="system" width="64" height="56"/>
+        <image name="coreml_logo" width="256" height="256"/>
+        <image name="tensorflow_logo" width="1000" height="1070"/>
+    </resources>
+</document>
