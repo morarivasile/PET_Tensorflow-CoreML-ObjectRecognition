@@ -31,6 +31,8 @@
 		C38870FD23FE6ED60028848A /* ObjectDetector.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = C38870FC23FE6ED60028848A /* ObjectDetector.mlmodel */; };
 		C388710023FE82100028848A /* detect.tflite in Resources */ = {isa = PBXBuildFile; fileRef = C38870FE23FE820F0028848A /* detect.tflite */; };
 		C388710123FE82100028848A /* labelmap.txt in Resources */ = {isa = PBXBuildFile; fileRef = C38870FF23FE82100028848A /* labelmap.txt */; };
+		C388710323FEA6120028848A /* UIColor+ClassIndexColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C388710223FEA6120028848A /* UIColor+ClassIndexColor.swift */; };
+		C388710523FEA64F0028848A /* MLModel+Classes.swift in Sources */ = {isa = PBXBuildFile; fileRef = C388710423FEA64F0028848A /* MLModel+Classes.swift */; };
 		F0494341B13EC4DBC2928ED6 /* Pods_Tensorflow_coreml_obj_detection.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD776E5E6F30C6AEDE549141 /* Pods_Tensorflow_coreml_obj_detection.framework */; };
 /* End PBXBuildFile section */
 
@@ -62,6 +64,8 @@
 		C38870FC23FE6ED60028848A /* ObjectDetector.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = ObjectDetector.mlmodel; sourceTree = "<group>"; };
 		C38870FE23FE820F0028848A /* detect.tflite */ = {isa = PBXFileReference; lastKnownFileType = file; path = detect.tflite; sourceTree = "<group>"; };
 		C38870FF23FE82100028848A /* labelmap.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = labelmap.txt; sourceTree = "<group>"; };
+		C388710223FEA6120028848A /* UIColor+ClassIndexColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+ClassIndexColor.swift"; sourceTree = "<group>"; };
+		C388710423FEA64F0028848A /* MLModel+Classes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MLModel+Classes.swift"; sourceTree = "<group>"; };
 		CF8612D69B115B2E33198FAE /* Pods-Tensorflow_coreml_obj_detection.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tensorflow_coreml_obj_detection.release.xcconfig"; path = "Target Support Files/Pods-Tensorflow_coreml_obj_detection/Pods-Tensorflow_coreml_obj_detection.release.xcconfig"; sourceTree = "<group>"; };
 		D066F94AA9F33A3BA0B691CD /* Pods-Tensorflow_coreml_obj_detection.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tensorflow_coreml_obj_detection.debug.xcconfig"; path = "Target Support Files/Pods-Tensorflow_coreml_obj_detection/Pods-Tensorflow_coreml_obj_detection.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -138,7 +142,9 @@
 				C340344D23FBFC9D00DD818A /* StoryboardLoadable.swift */,
 				C34CD32223FD186C00297600 /* String+Size.swift */,
 				C34CD32423FD189400297600 /* UIColor+Percentage.swift */,
+				C388710223FEA6120028848A /* UIColor+ClassIndexColor.swift */,
 				C34CD32623FD18C700297600 /* CVPixelBuffer+Resize.swift */,
+				C388710423FEA64F0028848A /* MLModel+Classes.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -317,8 +323,10 @@
 				C340343E23FBE92C00DD818A /* FPSCounter.swift in Sources */,
 				C340342C23FBE71500DD818A /* MainViewController.swift in Sources */,
 				C347F2E923FD5724005B2C12 /* ModelDataHandler.swift in Sources */,
+				C388710323FEA6120028848A /* UIColor+ClassIndexColor.swift in Sources */,
 				C347F2D023FD1CE3005B2C12 /* TFModelDataHandler.swift in Sources */,
 				C340342823FBE71500DD818A /* AppDelegate.swift in Sources */,
+				C388710523FEA64F0028848A /* MLModel+Classes.swift in Sources */,
 				C34CD33223FD19FC00297600 /* OverlayView.swift in Sources */,
 				C34CD33423FD1A8C00297600 /* CameraFeedManager.swift in Sources */,
 				C34CD32323FD186C00297600 /* String+Size.swift in Sources */,
