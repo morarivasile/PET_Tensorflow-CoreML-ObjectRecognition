@@ -30,6 +30,7 @@
 		C34CD32E23FD19B300297600 /* PreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C34CD32D23FD19B300297600 /* PreviewView.swift */; };
 		C34CD33223FD19FC00297600 /* OverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C34CD33123FD19FC00297600 /* OverlayView.swift */; };
 		C34CD33423FD1A8C00297600 /* CameraFeedManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C34CD33323FD1A8C00297600 /* CameraFeedManager.swift */; };
+		C38870F923FE61C70028848A /* CGImagePropertyOrientation+Initializers.swift in Sources */ = {isa = PBXBuildFile; fileRef = C38870F823FE61C70028848A /* CGImagePropertyOrientation+Initializers.swift */; };
 		F0494341B13EC4DBC2928ED6 /* Pods_Tensorflow_coreml_obj_detection.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD776E5E6F30C6AEDE549141 /* Pods_Tensorflow_coreml_obj_detection.framework */; };
 /* End PBXBuildFile section */
 
@@ -60,6 +61,7 @@
 		C34CD32D23FD19B300297600 /* PreviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewView.swift; sourceTree = "<group>"; };
 		C34CD33123FD19FC00297600 /* OverlayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverlayView.swift; sourceTree = "<group>"; };
 		C34CD33323FD1A8C00297600 /* CameraFeedManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraFeedManager.swift; sourceTree = "<group>"; };
+		C38870F823FE61C70028848A /* CGImagePropertyOrientation+Initializers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGImagePropertyOrientation+Initializers.swift"; sourceTree = "<group>"; };
 		CF8612D69B115B2E33198FAE /* Pods-Tensorflow_coreml_obj_detection.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tensorflow_coreml_obj_detection.release.xcconfig"; path = "Target Support Files/Pods-Tensorflow_coreml_obj_detection/Pods-Tensorflow_coreml_obj_detection.release.xcconfig"; sourceTree = "<group>"; };
 		D066F94AA9F33A3BA0B691CD /* Pods-Tensorflow_coreml_obj_detection.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tensorflow_coreml_obj_detection.debug.xcconfig"; path = "Target Support Files/Pods-Tensorflow_coreml_obj_detection/Pods-Tensorflow_coreml_obj_detection.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -137,6 +139,7 @@
 				C34CD32223FD186C00297600 /* String+Size.swift */,
 				C34CD32423FD189400297600 /* UIColor+Percentage.swift */,
 				C34CD32623FD18C700297600 /* CVPixelBuffer+Resize.swift */,
+				C38870F823FE61C70028848A /* CGImagePropertyOrientation+Initializers.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -319,6 +322,7 @@
 				C34CD33223FD19FC00297600 /* OverlayView.swift in Sources */,
 				C34CD33423FD1A8C00297600 /* CameraFeedManager.swift in Sources */,
 				C34CD32323FD186C00297600 /* String+Size.swift in Sources */,
+				C38870F923FE61C70028848A /* CGImagePropertyOrientation+Initializers.swift in Sources */,
 				C347F2DB23FD3E0F005B2C12 /* CameraFeedViewController.swift in Sources */,
 				C33F21FF23FC7AD7007B5432 /* MobileNetV2.mlmodel in Sources */,
 				C340342A23FBE71500DD818A /* SceneDelegate.swift in Sources */,

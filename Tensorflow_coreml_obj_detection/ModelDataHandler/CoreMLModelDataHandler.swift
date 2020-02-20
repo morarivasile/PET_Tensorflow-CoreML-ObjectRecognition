@@ -37,7 +37,8 @@ class CoreMLModelDataHandler: NSObject, ModelDataHandler {
     }
     
     func runModel(onFrame pixelBuffer: CVPixelBuffer, completion: @escaping ((Result?) -> ())) {
-        let exifOrientation = exifOrientationFromDeviceOrientation()
+        // Tell Vision about the orientation of the image.
+        let orientation = CGImagePropertyOrientation(UIDevice.current.orientation)
         
         let request = VNCoreMLRequest(model: vnCoreMLModel) { (req, err) in
             completion(self.getResult(from: req, pixelBuffer: pixelBuffer))
@@ -45,7 +46,7 @@ class CoreMLModelDataHandler: NSObject, ModelDataHandler {
         
         request.imageCropAndScaleOption = .scaleFill
         
-        try? VNImageRequestHandler(cvPixelBuffer: pixelBuffer, orientation: exifOrientation, options: [:]).perform([request])
+        try? VNImageRequestHandler(cvPixelBuffer: pixelBuffer, orientation: orientation, options: [:]).perform([request])
     }
     
     private func getResult(from request: VNRequest, pixelBuffer: CVPixelBuffer) -> Result? {
@@ -74,7 +75,6 @@ class CoreMLModelDataHandler: NSObject, ModelDataHandler {
     
     /// This assigns color for a particular class.
     private func colorForClass(withIndex index: Int) -> UIColor {
-        
         // We have a set of colors and the depending upon a stride, it assigns variations to of the base
         // colors to each object based on its index.
         let baseColor = colors[index % colors.count]
@@ -88,24 +88,5 @@ class CoreMLModelDataHandler: NSObject, ModelDataHandler {
         }
         
         return colorToAssign
-    }
-    
-    private func exifOrientationFromDeviceOrientation() -> CGImagePropertyOrientation {
-        let curDeviceOrientation = UIDevice.current.orientation
-        let exifOrientation: CGImagePropertyOrientation
-        
-        switch curDeviceOrientation {
-        case UIDeviceOrientation.portraitUpsideDown:  // Device oriented vertically, home button on the top
-            exifOrientation = .left
-        case UIDeviceOrientation.landscapeLeft:       // Device oriented horizontally, home button on the right
-            exifOrientation = .upMirrored
-        case UIDeviceOrientation.landscapeRight:      // Device oriented horizontally, home button on the left
-            exifOrientation = .down
-        case UIDeviceOrientation.portrait:            // Device oriented vertically, home button on the bottom
-            exifOrientation = .up
-        default:
-            exifOrientation = .up
-        }
-        return exifOrientation
     }
 }
