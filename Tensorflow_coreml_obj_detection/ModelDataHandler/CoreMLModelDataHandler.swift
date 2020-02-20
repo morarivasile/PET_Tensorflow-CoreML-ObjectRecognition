@@ -44,7 +44,7 @@ class CoreMLModelDataHandler: NSObject, ModelDataHandler {
         
         var resultArray: [Inference] = []
         
-        for (index, observation) in results.enumerated() where observation is VNRecognizedObjectObservation {
+        for observation in results where observation is VNRecognizedObjectObservation {
             guard let objectObservation = observation as? VNRecognizedObjectObservation else {
                 continue
             }
