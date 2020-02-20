@@ -14,16 +14,22 @@ final class MainViewController: CameraFeedViewController {
     
     @IBOutlet weak var visualEffectView: UIVisualEffectView!
     @IBOutlet weak var closeButton: UIButton!
+    @IBOutlet weak var fpsLabel: UILabel!
     
     // MARK: Controllers that manage functionality
     private var modelDataHandler: ModelDataHandler?
+    private let fpsCounter = FPSCounter()
     
     // MARK: Constants
     private let delayBetweenInferencesMs: Double = 200
     private var previousInferenceTimeMs: TimeInterval = Date.distantPast.timeIntervalSince1970 * 1000
     
-    // MARK: - IBActions
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        fpsCounter.start()
+    }
     
+    // MARK: IBActions
     @IBAction func coreMLButtonTapped(_ sender: UIButton) {
         modelDataHandler = CoreMLModelDataHandler(mlModel: YOLOv3Tiny().model)
         changeVisibility(true)
@@ -44,21 +50,29 @@ final class MainViewController: CameraFeedViewController {
     }
     
     private func changeVisibility(_ isHidden: Bool) {
+        fpsLabel.isHidden = !isHidden
         visualEffectView.isHidden = isHidden
         closeButton.isHidden = !isHidden
     }
     
-    override func didOutput(pixelBuffer: CVPixelBuffer) {
-        guard let modelDataHandler = modelDataHandler else { return }
-        
-        let currentTimeMs = Date().timeIntervalSince1970 * 1000
-        
-        guard (currentTimeMs - previousInferenceTimeMs) >= delayBetweenInferencesMs else {
-            return
+    private func updateFPSLabel() {
+        DispatchQueue.main.async {
+            self.fpsCounter.frameCompleted()
+            self.fpsLabel.text = String(format: "%.1f FPS", self.fpsCounter.fps)
         }
+    }
+    
+    override func didOutput(pixelBuffer: CVPixelBuffer) {
+        let currentTimeMs = Date().timeIntervalSince1970 * 1000
+        let passedTime = currentTimeMs - previousInferenceTimeMs
+        
+        guard passedTime >= delayBetweenInferencesMs else { return }
         
         previousInferenceTimeMs = currentTimeMs
-        modelDataHandler.runModel(onFrame: pixelBuffer, completion: { (result) in
+        
+        updateFPSLabel()
+        
+        modelDataHandler?.runModel(onFrame: pixelBuffer, completion: { (result) in
             guard let result = result else { return }
 
             let width = CVPixelBufferGetWidth(pixelBuffer)

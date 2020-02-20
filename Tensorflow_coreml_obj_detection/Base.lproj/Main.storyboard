@@ -23,6 +23,12 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <color key="backgroundColor" white="1" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SEx-bJ-zNz">
+                                <rect key="frame" x="207" y="842" width="0.0" height="0.0"/>
+                                <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="15"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tOk-HZ-okN">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="QaA-Vi-bb0">
@@ -144,7 +150,9 @@
                             <constraint firstItem="uex-pe-1OB" firstAttribute="top" secondItem="o8f-wK-vb0" secondAttribute="top" id="f4r-CJ-9JZ"/>
                             <constraint firstItem="nrR-PV-shY" firstAttribute="top" secondItem="Db5-Bp-jGr" secondAttribute="top" constant="16" id="gJW-Xq-7eR"/>
                             <constraint firstItem="uex-pe-1OB" firstAttribute="leading" secondItem="o8f-wK-vb0" secondAttribute="leading" id="iik-MG-bfX"/>
+                            <constraint firstItem="Db5-Bp-jGr" firstAttribute="bottom" secondItem="SEx-bJ-zNz" secondAttribute="bottom" constant="20" id="kyv-sJ-hHS"/>
                             <constraint firstItem="uex-pe-1OB" firstAttribute="bottom" secondItem="o8f-wK-vb0" secondAttribute="bottom" id="lvT-bp-swi"/>
+                            <constraint firstItem="SEx-bJ-zNz" firstAttribute="centerX" secondItem="pTX-Yk-tUc" secondAttribute="centerX" id="m3f-YG-nyl"/>
                             <constraint firstItem="o8f-wK-vb0" firstAttribute="leading" secondItem="Db5-Bp-jGr" secondAttribute="leading" id="mUb-IM-nYD"/>
                             <constraint firstItem="xLh-Ki-7dN" firstAttribute="centerX" secondItem="pTX-Yk-tUc" secondAttribute="centerX" id="oDl-lP-ujr"/>
                             <constraint firstItem="o8f-wK-vb0" firstAttribute="top" secondItem="pTX-Yk-tUc" secondAttribute="top" id="sg2-Ca-tBY"/>
@@ -159,6 +167,7 @@
                     <connections>
                         <outlet property="cameraUnavailableLabel" destination="xLh-Ki-7dN" id="TBN-to-mf5"/>
                         <outlet property="closeButton" destination="nrR-PV-shY" id="DKa-Ut-aCc"/>
+                        <outlet property="fpsLabel" destination="SEx-bJ-zNz" id="Xkl-Ap-yVh"/>
                         <outlet property="overlayView" destination="uex-pe-1OB" id="2A1-yM-ncB"/>
                         <outlet property="previewView" destination="o8f-wK-vb0" id="5iF-1G-WIo"/>
                         <outlet property="resumeButton" destination="Kzj-9N-E1N" id="tRO-ea-XZa"/>

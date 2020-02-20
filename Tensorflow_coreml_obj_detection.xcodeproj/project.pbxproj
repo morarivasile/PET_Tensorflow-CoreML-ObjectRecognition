@@ -117,7 +117,6 @@
 				C340343023FBE71C00DD818A /* Assets.xcassets */,
 				C340343223FBE71C00DD818A /* LaunchScreen.storyboard */,
 				C340343523FBE71C00DD818A /* Info.plist */,
-				C340343D23FBE92C00DD818A /* FPSCounter.swift */,
 			);
 			path = Tensorflow_coreml_obj_detection;
 			sourceTree = "<group>";
@@ -126,6 +125,7 @@
 			isa = PBXGroup;
 			children = (
 				C340342B23FBE71500DD818A /* MainViewController.swift */,
+				C340343D23FBE92C00DD818A /* FPSCounter.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
