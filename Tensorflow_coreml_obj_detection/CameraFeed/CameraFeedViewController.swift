@@ -17,7 +17,7 @@ class CameraFeedViewController: UIViewController {
     @IBOutlet weak var cameraUnavailableLabel: UILabel!
     
     // MARK: Controllers that manage functionality
-    private lazy var cameraFeedManager = CameraFeedManager(previewView: previewView)
+    lazy var cameraFeedManager = CameraFeedManager(previewView: previewView)
     
     // MARK: View Handling Methods
     override func viewDidLoad() {

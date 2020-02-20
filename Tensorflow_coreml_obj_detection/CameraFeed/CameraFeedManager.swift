@@ -91,15 +91,19 @@ class CameraFeedManager: NSObject {
     private var previewView: PreviewView
     private let sessionQueue = DispatchQueue(label: "sessionQueue")
     private var cameraConfiguration: CameraConfiguration = .failed
-    private lazy var videoDataOutput = AVCaptureVideoDataOutput()
+    private var videoDataOutput = AVCaptureVideoDataOutput()
     private var isSessionRunning = false
+    
+    private(set) var frameInterval = 1
+    private var seenFrames = 0
     
     // MARK: CameraFeedManagerDelegate
     weak var delegate: CameraFeedManagerDelegate?
     
     // MARK: Initializer
-    init(previewView: PreviewView) {
+    init(previewView: PreviewView, frameInterval: Int = 1) {
         self.previewView = previewView
+        self.frameInterval = frameInterval
         super.init()
         
         // Initializes the session
@@ -168,10 +172,15 @@ class CameraFeedManager: NSObject {
         }
     }
     
+    func setFrameInterval(_ frameInterval: Int) {
+        self.frameInterval = frameInterval
+    }
+    
     /**
      This method starts the AVCaptureSession
      **/
     private func startSession() {
+        self.seenFrames = 0
         self.session.startRunning()
         self.isSessionRunning = self.session.isRunning
     }
@@ -359,13 +368,18 @@ extension CameraFeedManager: AVCaptureVideoDataOutputSampleBufferDelegate {
     /** This method delegates the CVPixelBuffer of the frame seen by the camera currently.
      */
     func captureOutput(_ output: AVCaptureOutput, didOutput sampleBuffer: CMSampleBuffer, from connection: AVCaptureConnection) {
+        // Because lowering the capture device's FPS looks ugly in the preview,
+        // we capture at full speed but only call the delegate at its desired
+        // frame rate. If frameInterval is 1, we run at the full frame rate.
+        
+        seenFrames += 1
+        guard seenFrames >= frameInterval else { return }
+        seenFrames = 0
         
         // Converts the CMSampleBuffer to a CVPixelBuffer.
         let pixelBuffer: CVPixelBuffer? = CMSampleBufferGetImageBuffer(sampleBuffer)
         
-        guard let imagePixelBuffer = pixelBuffer else {
-            return
-        }
+        guard let imagePixelBuffer = pixelBuffer else { return }
         
         // Delegates the pixel buffer to the ViewController.
         delegate?.didOutput(pixelBuffer: imagePixelBuffer)

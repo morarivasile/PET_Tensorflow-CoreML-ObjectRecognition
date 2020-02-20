@@ -20,12 +20,9 @@ final class MainViewController: CameraFeedViewController {
     private var modelDataHandler: ModelDataHandler?
     private let fpsCounter = FPSCounter()
     
-    // MARK: Constants
-    private let delayBetweenInferencesMs: Double = 200
-    private var previousInferenceTimeMs: TimeInterval = Date.distantPast.timeIntervalSince1970 * 1000
-    
     override func viewDidLoad() {
         super.viewDidLoad()
+        cameraFeedManager.setFrameInterval(3)
         fpsCounter.start()
     }
     
@@ -58,18 +55,11 @@ final class MainViewController: CameraFeedViewController {
     private func updateFPSLabel() {
         DispatchQueue.main.async {
             self.fpsCounter.frameCompleted()
-            self.fpsLabel.text = String(format: "%.1f FPS\nDelay between interfences: %.1f Ms", self.fpsCounter.fps, self.delayBetweenInferencesMs)
+            self.fpsLabel.text = String(format: "%.1f FPS\nFrame interval: %d", self.fpsCounter.fps, self.cameraFeedManager.frameInterval)
         }
     }
     
     override func didOutput(pixelBuffer: CVPixelBuffer) {
-        let currentTimeMs = Date().timeIntervalSince1970 * 1000
-        let passedTime = currentTimeMs - previousInferenceTimeMs
-        
-        guard passedTime >= delayBetweenInferencesMs else { return }
-        
-        previousInferenceTimeMs = currentTimeMs
-        
         updateFPSLabel()
         
         modelDataHandler?.runModel(onFrame: pixelBuffer, completion: { (result) in
