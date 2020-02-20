@@ -13,7 +13,6 @@ import Accelerate
 
 /// Stores results for a particular frame that was successfully run through the `Interpreter`.
 struct Result {
-    let inferenceTime: Double
     let inferences: [Inference]
 }
 
@@ -125,7 +124,6 @@ class TFModelDataHandler: NSObject, ModelDataHandler {
             return nil
         }
         
-        let interval: TimeInterval
         let outputBoundingBox: Tensor
         let outputClasses: Tensor
         let outputScores: Tensor
@@ -147,9 +145,7 @@ class TFModelDataHandler: NSObject, ModelDataHandler {
             try interpreter.copy(rgbData, toInputAt: 0)
             
             // Run inference by invoking the `Interpreter`.
-            let startDate = Date()
             try interpreter.invoke()
-            interval = Date().timeIntervalSince(startDate) * 1000
             
             outputBoundingBox = try interpreter.output(at: 0)
             outputClasses = try interpreter.output(at: 1)
@@ -170,8 +166,8 @@ class TFModelDataHandler: NSObject, ModelDataHandler {
             height: CGFloat(imageHeight)
         )
         
-        // Returns the inference time and inferences
-        let result = Result(inferenceTime: interval, inferences: resultArray)
+        // Returns inferences
+        let result = Result(inferences: resultArray)
         return result
     }
     

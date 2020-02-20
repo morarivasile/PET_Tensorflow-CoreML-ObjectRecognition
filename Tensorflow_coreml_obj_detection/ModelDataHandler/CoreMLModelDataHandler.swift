@@ -77,7 +77,7 @@ class CoreMLModelDataHandler: NSObject, ModelDataHandler {
             resultArray.append(Inference(confidence: topLabelObservation.confidence, className: topLabelObservation.identifier, rect: newRect, displayColor: color))
         }
         
-        return Result(inferenceTime: 35.0, inferences: resultArray)
+        return Result(inferences: resultArray)
     }
     
     /// This assigns color for a particular class.
