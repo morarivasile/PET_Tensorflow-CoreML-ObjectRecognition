@@ -15,6 +15,8 @@ class CoreMLModelDataHandler: NSObject, ModelDataHandler {
     
     private let colorStrideValue = 10
     
+    private let drawRectSize: CGSize
+    
     private let colors = [
         UIColor.red,
         UIColor(displayP3Red: 90.0/255.0, green: 200.0/255.0, blue: 250.0/255.0, alpha: 1.0),
@@ -28,17 +30,18 @@ class CoreMLModelDataHandler: NSObject, ModelDataHandler {
         UIColor.brown
     ]
     
-    init?(mlModel: MLModel) {
+    init?(mlModel: MLModel, drawRectSize: CGSize) {
         guard let vnCoreMLModel = try? VNCoreMLModel(for: mlModel) else {
             return nil
         }
         
         self.vnCoreMLModel = vnCoreMLModel
+        self.drawRectSize = drawRectSize
     }
     
     func runModel(onFrame pixelBuffer: CVPixelBuffer, completion: @escaping ((Result?) -> ())) {
         // Tell Vision about the orientation of the image.
-        let orientation = CGImagePropertyOrientation(UIDevice.current.orientation)
+        let orientation = exifOrientationFromDeviceOrientation()
         
         let request = VNCoreMLRequest(model: vnCoreMLModel) { (req, err) in
             completion(self.getResult(from: req, pixelBuffer: pixelBuffer))
@@ -67,7 +70,11 @@ class CoreMLModelDataHandler: NSObject, ModelDataHandler {
             let objectBounds = VNImageRectForNormalizedRect(objectObservation.boundingBox, Int(width), Int(height))
             let color = colorForClass(withIndex: index + 1)
             
-            resultArray.append(Inference(confidence: topLabelObservation.confidence, className: topLabelObservation.identifier, rect: objectBounds, displayColor: color))
+            var newRect = objectObservation.boundingBox.applying(CGAffineTransform(scaleX: CGFloat(width), y: CGFloat(height)))
+            
+            newRect.origin.y = CGFloat(height) - newRect.origin.y - newRect.height
+            
+            resultArray.append(Inference(confidence: topLabelObservation.confidence, className: topLabelObservation.identifier, rect: newRect, displayColor: color))
         }
         
         return Result(inferenceTime: 35.0, inferences: resultArray)
@@ -89,4 +96,23 @@ class CoreMLModelDataHandler: NSObject, ModelDataHandler {
         
         return colorToAssign
     }
+    
+    public func exifOrientationFromDeviceOrientation() -> CGImagePropertyOrientation {
+           let curDeviceOrientation = UIDevice.current.orientation
+           let exifOrientation: CGImagePropertyOrientation
+           
+           switch curDeviceOrientation {
+           case UIDeviceOrientation.portraitUpsideDown:  // Device oriented vertically, home button on the top
+               exifOrientation = .left
+           case UIDeviceOrientation.landscapeLeft:       // Device oriented horizontally, home button on the right
+               exifOrientation = .upMirrored
+           case UIDeviceOrientation.landscapeRight:      // Device oriented horizontally, home button on the left
+               exifOrientation = .down
+           case UIDeviceOrientation.portrait:            // Device oriented vertically, home button on the bottom
+               exifOrientation = .up
+           default:
+               exifOrientation = .up
+           }
+           return exifOrientation
+       }
 }

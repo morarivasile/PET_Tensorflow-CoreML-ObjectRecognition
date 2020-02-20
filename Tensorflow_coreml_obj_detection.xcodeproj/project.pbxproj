@@ -25,12 +25,12 @@
 		C34CD32323FD186C00297600 /* String+Size.swift in Sources */ = {isa = PBXBuildFile; fileRef = C34CD32223FD186C00297600 /* String+Size.swift */; };
 		C34CD32523FD189400297600 /* UIColor+Percentage.swift in Sources */ = {isa = PBXBuildFile; fileRef = C34CD32423FD189400297600 /* UIColor+Percentage.swift */; };
 		C34CD32723FD18C700297600 /* CVPixelBuffer+Resize.swift in Sources */ = {isa = PBXBuildFile; fileRef = C34CD32623FD18C700297600 /* CVPixelBuffer+Resize.swift */; };
-		C34CD32A23FD191400297600 /* detect.tflite in Resources */ = {isa = PBXBuildFile; fileRef = C34CD32823FD191400297600 /* detect.tflite */; };
-		C34CD32B23FD191400297600 /* labelmap.txt in Resources */ = {isa = PBXBuildFile; fileRef = C34CD32923FD191400297600 /* labelmap.txt */; };
 		C34CD32E23FD19B300297600 /* PreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C34CD32D23FD19B300297600 /* PreviewView.swift */; };
 		C34CD33223FD19FC00297600 /* OverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C34CD33123FD19FC00297600 /* OverlayView.swift */; };
 		C34CD33423FD1A8C00297600 /* CameraFeedManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C34CD33323FD1A8C00297600 /* CameraFeedManager.swift */; };
-		C38870F923FE61C70028848A /* CGImagePropertyOrientation+Initializers.swift in Sources */ = {isa = PBXBuildFile; fileRef = C38870F823FE61C70028848A /* CGImagePropertyOrientation+Initializers.swift */; };
+		C38870FD23FE6ED60028848A /* ObjectDetector.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = C38870FC23FE6ED60028848A /* ObjectDetector.mlmodel */; };
+		C388710023FE82100028848A /* detect.tflite in Resources */ = {isa = PBXBuildFile; fileRef = C38870FE23FE820F0028848A /* detect.tflite */; };
+		C388710123FE82100028848A /* labelmap.txt in Resources */ = {isa = PBXBuildFile; fileRef = C38870FF23FE82100028848A /* labelmap.txt */; };
 		F0494341B13EC4DBC2928ED6 /* Pods_Tensorflow_coreml_obj_detection.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD776E5E6F30C6AEDE549141 /* Pods_Tensorflow_coreml_obj_detection.framework */; };
 /* End PBXBuildFile section */
 
@@ -56,12 +56,12 @@
 		C34CD32223FD186C00297600 /* String+Size.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Size.swift"; sourceTree = "<group>"; };
 		C34CD32423FD189400297600 /* UIColor+Percentage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Percentage.swift"; sourceTree = "<group>"; };
 		C34CD32623FD18C700297600 /* CVPixelBuffer+Resize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CVPixelBuffer+Resize.swift"; sourceTree = "<group>"; };
-		C34CD32823FD191400297600 /* detect.tflite */ = {isa = PBXFileReference; lastKnownFileType = file; path = detect.tflite; sourceTree = "<group>"; };
-		C34CD32923FD191400297600 /* labelmap.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = labelmap.txt; sourceTree = "<group>"; };
 		C34CD32D23FD19B300297600 /* PreviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewView.swift; sourceTree = "<group>"; };
 		C34CD33123FD19FC00297600 /* OverlayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverlayView.swift; sourceTree = "<group>"; };
 		C34CD33323FD1A8C00297600 /* CameraFeedManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraFeedManager.swift; sourceTree = "<group>"; };
-		C38870F823FE61C70028848A /* CGImagePropertyOrientation+Initializers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGImagePropertyOrientation+Initializers.swift"; sourceTree = "<group>"; };
+		C38870FC23FE6ED60028848A /* ObjectDetector.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = ObjectDetector.mlmodel; sourceTree = "<group>"; };
+		C38870FE23FE820F0028848A /* detect.tflite */ = {isa = PBXFileReference; lastKnownFileType = file; path = detect.tflite; sourceTree = "<group>"; };
+		C38870FF23FE82100028848A /* labelmap.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = labelmap.txt; sourceTree = "<group>"; };
 		CF8612D69B115B2E33198FAE /* Pods-Tensorflow_coreml_obj_detection.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tensorflow_coreml_obj_detection.release.xcconfig"; path = "Target Support Files/Pods-Tensorflow_coreml_obj_detection/Pods-Tensorflow_coreml_obj_detection.release.xcconfig"; sourceTree = "<group>"; };
 		D066F94AA9F33A3BA0B691CD /* Pods-Tensorflow_coreml_obj_detection.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tensorflow_coreml_obj_detection.debug.xcconfig"; path = "Target Support Files/Pods-Tensorflow_coreml_obj_detection/Pods-Tensorflow_coreml_obj_detection.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -139,7 +139,6 @@
 				C34CD32223FD186C00297600 /* String+Size.swift */,
 				C34CD32423FD189400297600 /* UIColor+Percentage.swift */,
 				C34CD32623FD18C700297600 /* CVPixelBuffer+Resize.swift */,
-				C38870F823FE61C70028848A /* CGImagePropertyOrientation+Initializers.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -166,6 +165,7 @@
 		C347F2E523FD56BB005B2C12 /* CoreML */ = {
 			isa = PBXGroup;
 			children = (
+				C38870FC23FE6ED60028848A /* ObjectDetector.mlmodel */,
 				C33F220023FC7BA2007B5432 /* YOLOv3Tiny.mlmodel */,
 				C33F21FE23FC7AD7007B5432 /* MobileNetV2.mlmodel */,
 			);
@@ -176,8 +176,8 @@
 			isa = PBXGroup;
 			children = (
 				C347F2D223FD1D24005B2C12 /* MobileNetSSD.swift */,
-				C34CD32823FD191400297600 /* detect.tflite */,
-				C34CD32923FD191400297600 /* labelmap.txt */,
+				C38870FE23FE820F0028848A /* detect.tflite */,
+				C38870FF23FE82100028848A /* labelmap.txt */,
 			);
 			path = TensorFlow;
 			sourceTree = "<group>";
@@ -268,11 +268,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C34CD32B23FD191400297600 /* labelmap.txt in Resources */,
+				C388710023FE82100028848A /* detect.tflite in Resources */,
 				C340343423FBE71C00DD818A /* LaunchScreen.storyboard in Resources */,
 				C340343123FBE71C00DD818A /* Assets.xcassets in Resources */,
 				C340342F23FBE71500DD818A /* Main.storyboard in Resources */,
-				C34CD32A23FD191400297600 /* detect.tflite in Resources */,
+				C388710123FE82100028848A /* labelmap.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -322,11 +322,11 @@
 				C34CD33223FD19FC00297600 /* OverlayView.swift in Sources */,
 				C34CD33423FD1A8C00297600 /* CameraFeedManager.swift in Sources */,
 				C34CD32323FD186C00297600 /* String+Size.swift in Sources */,
-				C38870F923FE61C70028848A /* CGImagePropertyOrientation+Initializers.swift in Sources */,
 				C347F2DB23FD3E0F005B2C12 /* CameraFeedViewController.swift in Sources */,
 				C33F21FF23FC7AD7007B5432 /* MobileNetV2.mlmodel in Sources */,
 				C340342A23FBE71500DD818A /* SceneDelegate.swift in Sources */,
 				C34CD32723FD18C700297600 /* CVPixelBuffer+Resize.swift in Sources */,
+				C38870FD23FE6ED60028848A /* ObjectDetector.mlmodel in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

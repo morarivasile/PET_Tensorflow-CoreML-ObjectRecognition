@@ -222,7 +222,7 @@ class TFModelDataHandler: NSObject, ModelDataHandler {
         
         // Sort results in descending order of confidence.
         resultsArray.sort { (first, second) -> Bool in
-            return first.confidence  > second.confidence
+            return first.confidence > second.confidence
         }
         
         return resultsArray

@@ -25,9 +25,7 @@ struct ObjectOverlay {
 class OverlayView: UIView {
     
     var objectOverlays: [ObjectOverlay] = []
-    private let cornerRadius: CGFloat = 10.0
-    private let stringBgAlpha: CGFloat
-        = 0.7
+    private let stringBgAlpha: CGFloat = 0.7
     private let lineWidth: CGFloat = 3
     private let stringFontColor = UIColor.white
     private let stringHorizontalSpacing: CGFloat = 13.0

@@ -114,13 +114,6 @@ class CameraFeedManager: NSObject {
         self.attemptToConfigureSession()
     }
     
-    func setPreviewView(_ previewView: PreviewView) {
-        self.previewView = previewView
-        self.previewView.session = session
-        self.previewView.previewLayer.connection?.videoOrientation = .portrait
-        self.previewView.previewLayer.videoGravity = .resizeAspectFill
-    }
-    
     // MARK: Session Start and End methods
     
     /**
@@ -162,7 +155,6 @@ class CameraFeedManager: NSObject {
      This method resumes an interrupted AVCaptureSession.
      */
     func resumeInterruptedSession(withCompletion completion: @escaping (Bool) -> ()) {
-        
         sessionQueue.async {
             self.startSession()
             
@@ -229,7 +221,6 @@ class CameraFeedManager: NSObject {
      This method handles all the steps to configure an AVCaptureSession.
      */
     private func configureSession() {
-        
         guard cameraConfiguration == .success else {
             return
         }
@@ -257,10 +248,9 @@ class CameraFeedManager: NSObject {
      This method tries to an AVCaptureDeviceInput to the current AVCaptureSession.
      */
     private func addVideoDeviceInput() -> Bool {
-        
         /**Tries to get the default back camera.
          */
-        guard let camera  = AVCaptureDevice.default(.builtInWideAngleCamera, for: .video, position: .back) else {
+        guard let camera = AVCaptureDevice.default(.builtInWideAngleCamera, for: .video, position: .back) else {
             fatalError("Cannot find camera")
         }
         
@@ -269,12 +259,10 @@ class CameraFeedManager: NSObject {
             if session.canAddInput(videoDeviceInput) {
                 session.addInput(videoDeviceInput)
                 return true
-            }
-            else {
+            } else {
                 return false
             }
-        }
-        catch {
+        } catch {
             fatalError("Cannot create video device input")
         }
     }
@@ -283,11 +271,10 @@ class CameraFeedManager: NSObject {
      This method tries to an AVCaptureVideoDataOutput to the current AVCaptureSession.
      */
     private func addVideoDataOutput() -> Bool {
-        
         let sampleBufferQueue = DispatchQueue(label: "sampleBufferQueue")
         videoDataOutput.setSampleBufferDelegate(self, queue: sampleBufferQueue)
         videoDataOutput.alwaysDiscardsLateVideoFrames = true
-        videoDataOutput.videoSettings = [ String(kCVPixelBufferPixelFormatTypeKey) : kCMPixelFormat_32BGRA]
+        videoDataOutput.videoSettings = [String(kCVPixelBufferPixelFormatTypeKey) : kCMPixelFormat_32BGRA]
         
         if session.canAddOutput(videoDataOutput) {
             session.addOutput(videoDataOutput)
@@ -312,7 +299,6 @@ class CameraFeedManager: NSObject {
     
     // MARK: Notification Observers
     @objc func sessionWasInterrupted(notification: Notification) {
-        
         if let userInfoValue = notification.userInfo?[AVCaptureSessionInterruptionReasonKey] as AnyObject?,
             let reasonIntegerValue = userInfoValue.integerValue,
             let reason = AVCaptureSession.InterruptionReason(rawValue: reasonIntegerValue) {
@@ -325,14 +311,12 @@ class CameraFeedManager: NSObject {
                 canResumeManually = false
             }
             
-            self.delegate?.sessionWasInterrupted(canResumeManually: canResumeManually)
-            
+            delegate?.sessionWasInterrupted(canResumeManually: canResumeManually)
         }
     }
     
     @objc func sessionInterruptionEnded(notification: Notification) {
-        
-        self.delegate?.sessionInterruptionEnded()
+        delegate?.sessionInterruptionEnded()
     }
     
     @objc func sessionRuntimeErrorOccured(notification: Notification) {
@@ -353,8 +337,7 @@ class CameraFeedManager: NSObject {
                 }
             }
         } else {
-            self.delegate?.sessionRunTimeErrorOccured()
-            
+            delegate?.sessionRunTimeErrorOccured()
         }
     }
 }

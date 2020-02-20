@@ -181,7 +181,7 @@
         <!--Navigation Controller-->
         <scene sceneID="msX-Qa-3g7">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="0s8-Ku-p3N" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" interfaceStyle="dark" id="0s8-Ku-p3N" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="3pA-Ib-LXe">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>

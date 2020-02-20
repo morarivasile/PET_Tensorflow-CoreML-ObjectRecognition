@@ -39,12 +39,10 @@ class CameraFeedViewController: UIViewController {
     // MARK: Button Actions
     @IBAction func onClickResumeButton(_ sender: Any) {
         cameraFeedManager.resumeInterruptedSession { (complete) in
-            
             if complete {
                 self.resumeButton.isHidden = true
                 self.cameraUnavailableLabel.isHidden = true
-            }
-            else {
+            } else {
                 self.presentUnableToResumeSessionAlert()
             }
         }
