@@ -85,14 +85,6 @@ class CoreMLModelDataHandler: NSObject, ModelDataHandler {
         return exifOrientation
     }
     
-    private func getLabelsList() -> [String] {
-        guard let userDefined = mlModel.modelDescription.metadata[MLModelMetadataKey.creatorDefinedKey] as? [String : String] else {
-            print("Failed to retrieve mlModel creatorDefinedKey.")
-            return []
-        }
-        return userDefined["classes"]?.components(separatedBy: ",") ?? []
-    }
-    
     private func colorForClass(withLabel label: String) -> UIColor {
         let classIndex = mlModel.classes.firstIndex(of: label) ?? 1
         return UIColor.colorForClass(withIndex: classIndex)
