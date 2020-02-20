@@ -23,13 +23,12 @@ final class MainViewController: CameraFeedViewController {
     // MARK: VC lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-//        cameraFeedManager.setFrameInterval(3)
         fpsCounter.start()
     }
     
     // MARK: IBActions
     @IBAction func coreMLButtonTapped(_ sender: UIButton) {
-        modelDataHandler = CoreMLModelDataHandler(mlModel: ObjectDetector().model, drawRectSize: overlayView.bounds.size)
+        modelDataHandler = CoreMLModelDataHandler(mlModel: MobileNetV2_SSDLite().model, drawRectSize: overlayView.bounds.size)
         changeVisibility(true)
         title = "CoreML"
     }
