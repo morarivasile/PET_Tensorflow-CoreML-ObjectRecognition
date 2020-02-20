@@ -20,6 +20,7 @@ final class MainViewController: CameraFeedViewController {
     private var modelDataHandler: ModelDataHandler?
     private let fpsCounter = FPSCounter()
     
+    // MARK: VC lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         cameraFeedManager.setFrameInterval(3)
@@ -46,6 +47,7 @@ final class MainViewController: CameraFeedViewController {
         title = nil
     }
     
+    // MARK: Private
     private func changeVisibility(_ isHidden: Bool) {
         fpsLabel.isHidden = !isHidden
         visualEffectView.isHidden = isHidden
@@ -59,6 +61,7 @@ final class MainViewController: CameraFeedViewController {
         }
     }
     
+    // MARK: Override
     override func didOutput(pixelBuffer: CVPixelBuffer) {
         updateFPSLabel()
         
