@@ -58,7 +58,7 @@ final class MainViewController: CameraFeedViewController {
     private func updateFPSLabel() {
         DispatchQueue.main.async {
             self.fpsCounter.frameCompleted()
-            self.fpsLabel.text = String(format: "%.1f FPS", self.fpsCounter.fps)
+            self.fpsLabel.text = String(format: "%.1f FPS\nDelay between interfences: %.1f Ms", self.fpsCounter.fps, self.delayBetweenInferencesMs)
         }
     }
     
