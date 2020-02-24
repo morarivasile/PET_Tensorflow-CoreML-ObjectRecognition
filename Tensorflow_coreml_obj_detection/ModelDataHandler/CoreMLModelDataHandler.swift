@@ -14,16 +14,13 @@ class CoreMLModelDataHandler: NSObject, ModelDataHandler {
     private let mlModel: MLModel
     private let vnCoreMLModel: VNCoreMLModel
     
-    private let drawRectSize: CGSize
-    
-    init?(mlModel: MLModel, drawRectSize: CGSize) {
+    init?(mlModel: MLModel) {
         guard let vnCoreMLModel = try? VNCoreMLModel(for: mlModel) else {
             return nil
         }
         
         self.mlModel = mlModel
         self.vnCoreMLModel = vnCoreMLModel
-        self.drawRectSize = drawRectSize
     }
     
     func runModel(onFrame pixelBuffer: CVPixelBuffer, completion: @escaping ((Result?) -> ())) {

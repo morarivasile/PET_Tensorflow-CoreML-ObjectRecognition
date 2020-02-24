@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		C33F220123FC7BA2007B5432 /* YOLOv3Tiny.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = C33F220023FC7BA2007B5432 /* YOLOv3Tiny.mlmodel */; };
 		C340342823FBE71500DD818A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C340342723FBE71500DD818A /* AppDelegate.swift */; };
 		C340342A23FBE71500DD818A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C340342923FBE71500DD818A /* SceneDelegate.swift */; };
 		C340342C23FBE71500DD818A /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C340342B23FBE71500DD818A /* MainViewController.swift */; };
@@ -37,7 +36,6 @@
 
 /* Begin PBXFileReference section */
 		AD776E5E6F30C6AEDE549141 /* Pods_Tensorflow_coreml_obj_detection.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Tensorflow_coreml_obj_detection.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		C33F220023FC7BA2007B5432 /* YOLOv3Tiny.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = YOLOv3Tiny.mlmodel; sourceTree = "<group>"; };
 		C340342423FBE71500DD818A /* Tensorflow_coreml_obj_detection.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tensorflow_coreml_obj_detection.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C340342723FBE71500DD818A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C340342923FBE71500DD818A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -169,7 +167,6 @@
 		C347F2E523FD56BB005B2C12 /* CoreML */ = {
 			isa = PBXGroup;
 			children = (
-				C33F220023FC7BA2007B5432 /* YOLOv3Tiny.mlmodel */,
 				C388710E23FEC56D0028848A /* MobileNetV2_SSDLite.mlmodel */,
 			);
 			path = CoreML;
@@ -317,7 +314,6 @@
 				C388710F23FEC56E0028848A /* MobileNetV2_SSDLite.mlmodel in Sources */,
 				C34CD32523FD189400297600 /* UIColor+Percentage.swift in Sources */,
 				C347F2E023FD3F57005B2C12 /* CoreMLModelDataHandler.swift in Sources */,
-				C33F220123FC7BA2007B5432 /* YOLOv3Tiny.mlmodel in Sources */,
 				C340343E23FBE92C00DD818A /* FPSCounter.swift in Sources */,
 				C340342C23FBE71500DD818A /* MainViewController.swift in Sources */,
 				C347F2E923FD5724005B2C12 /* ModelDataHandler.swift in Sources */,

@@ -28,7 +28,7 @@ final class MainViewController: CameraFeedViewController {
     
     // MARK: IBActions
     @IBAction func coreMLButtonTapped(_ sender: UIButton) {
-        modelDataHandler = CoreMLModelDataHandler(mlModel: MobileNetV2_SSDLite().model, drawRectSize: overlayView.bounds.size)
+        modelDataHandler = CoreMLModelDataHandler(mlModel: MobileNetV2_SSDLite().model)
         changeVisibility(true)
         title = "CoreML"
     }
